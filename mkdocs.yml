@@ -3,8 +3,8 @@ docs_dir: src
 site_dir: out
 
 theme:
-  theme:
-  name: readthedocs
+  name: material
+  locale: en
   collapse_navigation: true   # enable collapsing
   navigation_depth: 3       # show nested levels (must be >1)
   sticky_navigation: true   
@@ -13,9 +13,40 @@ theme:
     - yaml
     - rust
 
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - tables: {}
+  - extra: {}
+  - def_list: {}
+  - toc:
+      permalink: ""
+      separator: "_"
+  - admonition: {}
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  
 nav:
-  - Chapter 1:
-      - Intro: chapter1/intro.md
-      - Lesson 1: chapter1/lesson-1.md
-  - Chapter 2:
-      - Overview: chapter2/overview.md
+  - Home: index.md
+  - MATH481:
+    - Boolean Logic:
+        - Boolean Logic: 481/Boolean Logic/1-boolean-logic.md
+        - CNF and DNF: 481/Boolean Logic/2-DNF-and-CNF.md
+        - Tautologies: 481/Boolean Logic/3-tautologies.md
+        - Compactness Theorem: 481/Boolean Logic/4-compactness-theorem.md
+        - Satisfiability: 481/Boolean Logic/5-satisfiability.md
+        - CS Topics: 481/Boolean Logic/6-CS-topics.md
+
+  - MATH465:
+    - Enumerative Combinatorics:
+        - counting: 465/Enumerative Combinatorics/1-counting.md
+        - multinomial theorem: 465/Enumerative Combinatorics/2-multinomial-theorem.md
+        - generating function: 465/Enumerative Combinatorics/3-generating-function.md
+        - sterling number: 465/Enumerative Combinatorics/4-sterling-number.md
+        - linear recurrence: 465/Enumerative Combinatorics/5-linear-recurrence.md
+        - catalan numbers: 465/Enumerative Combinatorics/6-catalan-numbers.md

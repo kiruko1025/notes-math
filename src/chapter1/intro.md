@@ -1,7 +1,0 @@
----
-title: Introduction
----
-
-# Intro
-
-example
